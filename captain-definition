@@ -1,7 +1,7 @@
  {
   "schemaVersion": 2,
   "dockerfileLines": [
-                        "FROM node:8.7.0-alpine",
+                        "FROM node:8.12-alpine",
                         "RUN mkdir -p /usr/src/app",
                         "WORKDIR /usr/src/app",
                         "RUN apk --no-cache add --virtual builds-deps build-base python",
