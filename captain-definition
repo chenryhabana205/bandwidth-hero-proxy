@@ -6,6 +6,8 @@
                         "WORKDIR /usr/src/app",
                         "RUN apk --no-cache add --virtual builds-deps build-base python",
                         "COPY ./package.json /usr/src/app/",
+                        "RUN npm install node-gyp"
+                        "RUN node-gyp rebuild"
                         "RUN npm install && npm cache clean --force",
                         "COPY ./ /usr/src/app",
                         "ENV NODE_ENV production",
