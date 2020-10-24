@@ -6,7 +6,7 @@
                         "RUN apk add g++ make python",
                         "WORKDIR /usr/src/app",
                         "COPY ./package.json /usr/src/app/",
-                        "RUN npm install && npm cache clean --force",
+                        "RUN apk add --no-cache --virtual .gyp  python  make  g++  && npm install  && apk del .gyp",
                         "COPY ./ /usr/src/app",
                         "ENV NODE_ENV production",
                         "ENV PORT 8080",
