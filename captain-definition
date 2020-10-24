@@ -3,6 +3,7 @@
   "dockerfileLines": [
                         "FROM node:8.12-alpine",
                         "RUN mkdir -p /usr/src/app",
+                        "RUN apk add g++ make python",
                         "WORKDIR /usr/src/app",
                         "COPY ./package.json /usr/src/app/",
                         "RUN npm install && npm cache clean --force",
